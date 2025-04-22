@@ -981,6 +981,7 @@ img {
     position: relative;
     overflow: hidden;
     border: 1px solid #eee;
+    cursor: pointer;
 }
 
 .certification-card:hover {
