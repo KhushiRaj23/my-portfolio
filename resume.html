@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume | Khushi Raj</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
+      color: #333;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2b2d42;
+    }
+
+    .resume-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .resume-buttons button,
+    .resume-buttons a {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      background-color: #2b2d42;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .resume-buttons button:hover,
+    .resume-buttons a:hover {
+      background-color: #1a1c2c;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    iframe:hover {
+      transform: scale(1.005);
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        height: 450px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-button" title="Go to Home">⟵ Back to Home</a>
+
+    <h1>My Resume</h1>
+    <div class="resume-buttons">
+      <button id="generalBtn">General Resume</button>
+      <button id="specializedBtn">Specialized Resume</button>
+      <a id="downloadBtn" href="assets/12221391_KhushiRaj.pdf" download>Download Resume</a>
+    </div>
+    <iframe id="resumeFrame" src="assets/12221391_KhushiRaj.pdf#toolbar=0&navpanes=0&scrollbar=0" allow="fullscreen"></iframe>
+
+  </div>
+
+  <script>
+    const generalBtn = document.getElementById("generalBtn");
+    const specializedBtn = document.getElementById("specializedBtn");
+    const resumeFrame = document.getElementById("resumeFrame");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    generalBtn.addEventListener("click", () => {
+      resumeFrame.src = "assets/12221391_KhushiRaj.pdf#toolbar=0&navpanes=0&scrollbar=0";
+      downloadBtn.href = "assets/12221391_KhushiRaj.pdf";
+    });
+
+    specializedBtn.addEventListener("click", () => {
+      resumeFrame.src = "assets/KHUSHI_Specialized_CV.pdf#toolbar=0&navpanes=0&scrollbar=0";
+      downloadBtn.href = "assets/KHUSHI_Specialized_CV.pdf";
+    });
+  </script>
+</body>
+</html>
