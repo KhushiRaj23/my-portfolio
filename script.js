@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "OptimAI is a comprehensive platform designed to help businesses optimize their operations, marketing strategies, and customer interactions using advanced AI and machine learning techniques.",
             liveDemo: "https://optimal-ai-demo.netlify.app/", // Replace with actual demo link
             sourceCode: "https://github.com/yourusername/OptimAI", // Replace with actual GitHub link
-            mainImage: "images/optimai-main.jpg", // Replace with actual image path
+            mainImage: "image/OptimAI.png", // Replace with actual image path
             features: [
                 "Predictive Analytics for sales forecasting",
                 "Customer Segmentation using machine learning",
@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "Blogify is a sleek and user-friendly blogging platform built with modern web technologies, allowing users to easily create, publish, and manage their blog content.",
             liveDemo: "https://blogify-demo.netlify.app/", // Replace with actual demo link
             sourceCode: "https://github.com/yourusername/Blogify", // Replace with actual GitHub link
-            mainImage: "images/blogify-main.jpg", // Replace with actual image path
+            mainImage: "image/blogify.png", // Replace with actual image path
             features: [
                 "Rich Text Editor for content creation",
                 "User Authentication and Authorization",
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "Explore India is a web application designed to help users discover and plan trips to various destinations across India, featuring detailed information about places, attractions, and activities.",
             liveDemo: "https://explore-india-demo.netlify.app/", // Replace with actual demo link
             sourceCode: "https://github.com/yourusername/ExploreIndia", // Replace with actual GitHub link
-            mainImage: "images/explore-india-main.jpg", // Replace with actual image path
+            mainImage: "image/explore_india.jpg", // Replace with actual image path
             features: [
                 "Search and Filter Destinations",
                 "Detailed Place Information (description, photos, map)",
@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "A simple and classic Tic Tac Toe game implemented using vanilla JavaScript, HTML, and CSS, playable against another person.",
             liveDemo: "https://tic-tac-toe-game-demo.netlify.app/", // Replace with actual demo link
             sourceCode: "https://github.com/yourusername/TicTacToeGame", // Replace with actual GitHub link
-            mainImage: "images/tic-tac-toe-main.jpg", // Replace with actual image path
+            mainImage: "image/tic-tac-toe.png", // Replace with actual image path
             features: [
                 "Two-player mode",
                 "Win detection logic",
