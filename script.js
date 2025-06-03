@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "Blogify is a sleek and user-friendly blogging platform built with modern web technologies, allowing users to easily create, publish, and manage their blog content.",
             liveDemo: "https://blogify-demo.netlify.app/", // Replace with actual demo link
             sourceCode: "https://github.com/yourusername/Blogify", // Replace with actual GitHub link
-            mainImage: "image/blogify.png", // Replace with actual image path
+            mainImage: "image/image.png", // Replace with actual image path
             features: [
                 "Rich Text Editor for content creation",
                 "User Authentication and Authorization",
@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "A simple and classic Tic Tac Toe game implemented using vanilla JavaScript, HTML, and CSS, playable against another person.",
             liveDemo: "https://tic-tac-toe-game-demo.netlify.app/", // Replace with actual demo link
             sourceCode: "https://github.com/yourusername/TicTacToeGame", // Replace with actual GitHub link
-            mainImage: "image/tic-tac-toe.png", // Replace with actual image path
+            mainImage: "image/tic-tac-toe.jpg", // Replace with actual image path
             features: [
                 "Two-player mode",
                 "Win detection logic",
