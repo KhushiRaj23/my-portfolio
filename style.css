@@ -1079,7 +1079,7 @@ img {
 .input-icon {
     position: absolute;
     left: 1.5rem;
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
     color: #999;
     font-size: 1.6rem;
