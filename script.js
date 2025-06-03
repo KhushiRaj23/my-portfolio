@@ -258,222 +258,214 @@ if (currentYearElement) {
 
 // Project Detail Page Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.pathname.includes('project-detail.html')) {
-        const projectData = {
-            'optimai': {
-                title: 'OptimAI',
-                description: 'This project is an all-in-one career development platform built with Next.js and Prisma. It offers users a comprehensive environment to practice and improve their skills through quizzes and a performance dashboard that provides real-time AI-powered suggestions. Beyond practice, the platform enables users to create, enhance, and download professional resumes and cover letters with the assistance of AI. Additionally, it features an industrial insights dashboard to keep users informed about current trends and opportunities, helping them prepare effectively for their careers.',
-                liveDemo: 'https://optima-aii.vercel.app/',
-                sourceCode: 'https://github.com/KhushiRaj23/OptimaAII',
-                mainImage: 'image/OptimAI.png',
-                features: [
-                    'AI-powered resume and cover letter enhancement',
-                    'Interactive skill practice through quizzes',
-                    'Real-time performance tracking and suggestions',
-                    'Industrial insights dashboard',
-                    'Secure user authentication',
-                    'Responsive design for all devices'
-                ],
-                technologies: ['Next.js', 'Prisma', 'Clerk', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
-                challenges: [
-                    {
-                        title: 'AI Integration',
-                        description: 'Implementing AI services for resume enhancement and performance suggestions required careful consideration of API integration and error handling.'
-                    },
-                    {
-                        title: 'Database Management',
-                        description: 'Setting up and managing PostgreSQL with Prisma ORM required proper schema design and optimization for performance.'
-                    }
-                ],
-                learningOutcomes: [
-                    {
-                        title: 'Full-Stack Development',
-                        description: 'Gained practical experience in building scalable applications with Next.js and Prisma.'
-                    },
-                    {
-                        title: 'AI Integration',
-                        description: 'Learned how to effectively integrate AI services to enhance user experience.'
-                    },
-                    {
-                        title: 'Deployment',
-                        description: 'Mastered the process of deploying applications on Vercel and managing environment variables.'
-                    }
-                ]
-            },
-            'blogify': {
-                title: 'Blogify',
-                description: 'A Full-stack blogging platform that allows users to create, read, and comment on articles with secure user authentication. The platform features a modern UI, real-time updates, and a robust backend system.',
-                liveDemo: 'https://khushi-blogging-app.netlify.app/',
-                sourceCode: 'https://github.com/KhushiRaj23/blogging-app-frontend',
-                mainImage: 'image/image.png',
-                features: [
-                    'User authentication and authorization',
-                    'Create, read, update, and delete blog posts',
-                    'Comment system with real-time updates',
-                    'Responsive design',
-                    'Rich text editor for blog posts',
-                    'User profiles and settings'
-                ],
-                technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io'],
-                challenges: [
-                    {
-                        title: 'Real-time Updates',
-                        description: 'Implementing real-time updates for comments and posts required careful consideration of WebSocket integration.'
-                    },
-                    {
-                        title: 'State Management',
-                        description: 'Managing complex state across components while maintaining performance was a significant challenge.'
-                    }
-                ],
-                learningOutcomes: [
-                    {
-                        title: 'Full-Stack Development',
-                        description: 'Gained practical experience in building dynamic web applications with the MERN stack.'
-                    },
-                    {
-                        title: 'Real-time Features',
-                        description: 'Learned how to implement real-time features using WebSocket technology.'
-                    }
-                ]
-            },
-            'explore-india': {
-                title: 'Explore India',
-                description: 'A responsive frontend travel guide showcasing India\'s destinations, built with a focus on interactive design and user-friendly navigation. The platform helps users discover and plan their travel across India.',
-                liveDemo: '#',
-                sourceCode: '#',
-                mainImage: 'image/explore_india.jpg',
-                features: [
-                    'Interactive destination map',
-                    'Detailed city guides',
-                    'Travel tips and recommendations',
-                    'Photo gallery',
-                    'Responsive design',
-                    'Search and filter functionality'
-                ],
-                technologies: ['HTML', 'CSS', 'JavaScript', 'Google Maps API'],
-                challenges: [
-                    {
-                        title: 'Responsive Design',
-                        description: 'Creating a seamless experience across all devices required careful planning and testing.'
-                    },
-                    {
-                        title: 'Performance Optimization',
-                        description: 'Optimizing image loading and map rendering for better performance was crucial.'
-                    }
-                ],
-                learningOutcomes: [
-                    {
-                        title: 'Frontend Development',
-                        description: 'Improved skills in responsive design and interactive UI development.'
-                    },
-                    {
-                        title: 'API Integration',
-                        description: 'Learned how to effectively integrate and use third-party APIs.'
-                    }
-                ]
-            },
-            'tic-tac-toe': {
-                title: 'Tic Tac Toe Game',
-                description: 'A classic Tic Tac Toe game built using React. The game features a clean, modern interface with smooth animations and responsive design. Players can enjoy the game on any device.',
-                liveDemo: 'https://khushi-tic-tac-toe-game.netlify.app/',
-                sourceCode: 'https://github.com/KhushiRaj23/tic-tac-toe-game',
-                mainImage: 'image/tic-tac-toe.jpg',
-                features: [
-                    'Two-player gameplay',
-                    'Winning combination highlighting',
-                    'Game reset functionality',
-                    'Responsive design',
-                    'Smooth animations',
-                    'Score tracking'
-                ],
-                technologies: ['React', 'CSS', 'JavaScript'],
-                challenges: [
-                    {
-                        title: 'Game Logic',
-                        description: 'Implementing the game logic and win conditions required careful state management.'
-                    },
-                    {
-                        title: 'UI/UX',
-                        description: 'Creating an engaging and intuitive user interface was a key focus.'
-                    }
-                ],
-                learningOutcomes: [
-                    {
-                        title: 'React Development',
-                        description: 'Gained hands-on experience in building interactive UIs with React.'
-                    },
-                    {
-                        title: 'State Management',
-                        description: 'Learned how to effectively manage state and props in React applications.'
-                    }
-                ]
-            }
-        };
+    const urlParams = new URLSearchParams(window.location.search);
+    const project = urlParams.get('project'); // This is the project ID from the URL
 
-        // Get project ID from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const projectId = urlParams.get('project');
+    console.log("Project ID from URL:", project);
 
-        // Load project data
-        if (projectId && projectData[projectId]) {
-            const project = projectData[projectId];
-            
-            // Update page title
-            document.title = `${project.title} - Project Details`;
-
-            // Update project header
-            const projectTitle = document.querySelector('.project-title');
-            const projectLinks = document.querySelector('.project-header .project-links');
-            const mainImage = document.querySelector('.main-image');
-            const projectDescription = document.querySelector('.project-description');
-            const featureList = document.querySelector('.feature-list');
-            const techStack = document.querySelector('.tech-stack');
-            const challenges = document.querySelector('.challenges');
-            const learningOutcomes = document.querySelector('.learning-outcomes');
-
-            if (projectTitle) projectTitle.textContent = project.title;
-            
-            if (projectLinks) {
-                const links = projectLinks.querySelectorAll('a');
-                if (links[0]) links[0].href = project.liveDemo;
-                if (links[1]) links[1].href = project.sourceCode;
-            }
-
-            if (mainImage) {
-                mainImage.src = project.mainImage;
-                mainImage.alt = project.title;
-            }
-
-            if (projectDescription) projectDescription.textContent = project.description;
-
-            if (featureList) {
-                featureList.innerHTML = project.features.map(feature => `<li>${feature}</li>`).join('');
-            }
-
-            if (techStack) {
-                techStack.innerHTML = project.technologies.map(tech => `<span>${tech}</span>`).join('');
-            }
-
-            if (challenges) {
-                challenges.innerHTML = project.challenges.map(challenge => `
-                    <div class="challenge-item">
-                        <h3>${challenge.title}</h3>
-                        <p>${challenge.description}</p>
-                    </div>
-                `).join('');
-            }
-
-            if (learningOutcomes) {
-                learningOutcomes.innerHTML = project.learningOutcomes.map(outcome => `
-                    <div class="learning-outcome-item">
-                        <h3>${outcome.title}</h3>
-                        <p>${outcome.description}</p>
-                    </div>
-                `).join('');
-            }
-        } else {
-            // Redirect to projects section if project not found
-            window.location.href = 'index.html#projects';
+    const projectData = {
+        "optimai": {
+            title: "OptimAI: AI-Powered Business Optimization Platform",
+            description: "OptimAI is a comprehensive platform designed to help businesses optimize their operations, marketing strategies, and customer interactions using advanced AI and machine learning techniques.",
+            liveDemo: "https://optimal-ai-demo.netlify.app/", // Replace with actual demo link
+            sourceCode: "https://github.com/yourusername/OptimAI", // Replace with actual GitHub link
+            mainImage: "assets/images/optimai-main.jpg", // Replace with actual image path
+            features: [
+                "Predictive Analytics for sales forecasting",
+                "Customer Segmentation using machine learning",
+                "Automated Marketing Campaign Optimization",
+                "Supply Chain and Inventory Management",
+                "Interactive Dashboards and Reporting"
+            ],
+            technologies: [
+                "Python",
+                "TensorFlow",
+                "Scikit-learn",
+                "React",
+                "Node.js",
+                "MongoDB",
+                "AWS"
+            ],
+            challenges: [
+                { title: "Data Integration", description: "Integrating data from various disparate sources (CRM, ERP, sales platforms) was a significant challenge." },
+                { title: "Model Explainability", description: "Ensuring the AI models were explainable to business users who are not data scientists required careful model selection and visualization." },
+                { title: "Scalability", description: "Designing the platform to handle large volumes of data and a growing number of users efficiently." }
+            ],
+            learningOutcomes: [
+                { title: "Advanced ML Applications", description: "Gained deep experience in applying various machine learning algorithms to real-world business problems." },
+                { title: "Full-Stack Development", description: "Enhanced skills in building and deploying a complex full-stack application." },
+                { title: "Cloud Computing", description: "Improved knowledge of cloud services (AWS) for hosting and managing applications." }
+            ]
+        },
+        "blogify": {
+            title: "Blogify: Modern Blogging Platform",
+            description: "Blogify is a sleek and user-friendly blogging platform built with modern web technologies, allowing users to easily create, publish, and manage their blog content.",
+            liveDemo: "https://blogify-demo.netlify.app/", // Replace with actual demo link
+            sourceCode: "https://github.com/yourusername/Blogify", // Replace with actual GitHub link
+            mainImage: "assets/images/blogify-main.jpg", // Replace with actual image path
+            features: [
+                "Rich Text Editor for content creation",
+                "User Authentication and Authorization",
+                "Tagging and Categorization",
+                "Comment Section with moderation",
+                "Responsive Design"
+            ],
+            technologies: [
+                "JavaScript",
+                "React",
+                "Express.js",
+                "PostgreSQL",
+                "RESTful API"
+            ],
+            challenges: [
+                { title: "Real-time Editor Implementation", description: "Building a robust and intuitive rich text editor that handles various formatting options." },
+                { title: "Secure Authentication", description: "Implementing secure user sign-up and login with proper token management." },
+                { title: "Database Schema Design", description: "Designing a flexible database schema to handle different types of blog content and relationships." }
+            ],
+            learningOutcomes: [
+                { title: "Frontend Framework Proficiency", description: "Solidified skills in using React for building dynamic user interfaces." },
+                { title: "Backend API Development", description: "Gained experience in building a secure and scalable backend API with Express.js." },
+                { title: "Database Management", description: "Improved understanding of relational databases and SQL." }
+            ]
+        },
+        "explore-india": {
+            title: "Explore India: Travel Discovery Web App",
+            description: "Explore India is a web application designed to help users discover and plan trips to various destinations across India, featuring detailed information about places, attractions, and activities.",
+            liveDemo: "https://explore-india-demo.netlify.app/", // Replace with actual demo link
+            sourceCode: "https://github.com/yourusername/ExploreIndia", // Replace with actual GitHub link
+            mainImage: "assets/images/explore-india-main.jpg", // Replace with actual image path
+            features: [
+                "Search and Filter Destinations",
+                "Detailed Place Information (description, photos, map)",
+                "User Reviews and Ratings",
+                "Interactive Maps",
+                "Curated Travel Itineraries"
+            ],
+            technologies: [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Leaflet.js (for maps)",
+                "Serverless Functions (for data fetching)"
+            ],
+            challenges: [
+                { title: "Data Scraping and Curation", description: "Gathering and organizing comprehensive data about various locations across India." },
+                { title: "Map Integration", description: "Integrating interactive maps and displaying relevant information dynamically." },
+                { title: "Handling User Generated Content", description: "Implementing a system for user reviews and ensuring data validation and sanitization." }
+            ],
+            learningOutcomes: [
+                { title: "Frontend Development", description: "Enhanced skills in building interactive frontend applications with vanilla JavaScript and libraries." },
+                { title: "API Integration", description: "Gained experience in fetching and displaying data from external sources and APIs." },
+                { title: "Working with Geospatial Data", description: "Learned how to work with map libraries and display geographical information." }
+            ]
+        },
+        "tic-tac-toe": {
+            title: "Tic Tac Toe Game",
+            description: "A simple and classic Tic Tac Toe game implemented using vanilla JavaScript, HTML, and CSS, playable against another person.",
+            liveDemo: "https://tic-tac-toe-game-demo.netlify.app/", // Replace with actual demo link
+            sourceCode: "https://github.com/yourusername/TicTacToeGame", // Replace with actual GitHub link
+            mainImage: "assets/images/tic-tac-toe-main.jpg", // Replace with actual image path
+            features: [
+                "Two-player mode",
+                "Win detection logic",
+                "Draw detection",
+                "Game reset functionality",
+                "Simple and intuitive UI"
+            ],
+            technologies: [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ],
+            challenges: [
+                { title: "Game Logic Implementation", description: "Developing the core logic for winning conditions and turn management." },
+                { title: "UI Updates", description: "Dynamically updating the game board and status messages based on player moves." },
+                { title: "Handling User Input", description: "Implementing click event listeners and processing user input correctly." }
+            ],
+            learningOutcomes: [
+                { title: "Vanilla JavaScript Proficiency", description: "Strengthened understanding of fundamental JavaScript concepts by building a complete application without frameworks." },
+                { title: "DOM Manipulation", description: "Gained hands-on experience in manipulating the Document Object Model to update the user interface." },
+                { title: "Algorithmic Thinking", description: "Improved problem-solving skills by designing and implementing the game's logic." }
+            ]
         }
+    };
+
+    console.log("Project Data for ID:", projectData[project]);
+
+    if (project && projectData[project]) {
+        const currentProject = projectData[project];
+
+        // Update the page title
+        document.title = `${currentProject.title} | Your Name`; // Replace 'Your Name' with your name
+
+        // Update Project Header
+        const projectTitleElement = document.querySelector('.project-title');
+        if (projectTitleElement) projectTitleElement.textContent = currentProject.title;
+
+        const liveDemoLink = document.querySelector('.project-header .btn-primary');
+        if (liveDemoLink) liveDemoLink.href = currentProject.liveDemo;
+
+        const sourceCodeLink = document.querySelector('.project-header .btn-secondary');
+        if (sourceCodeLink) sourceCodeLink.href = currentProject.sourceCode;
+
+        // Update Project Gallery
+        const mainProjectImage = document.querySelector('.project-gallery .main-image');
+        if (mainProjectImage) mainProjectImage.src = currentProject.mainImage;
+
+        // Update Project Overview
+        const projectDescriptionElement = document.querySelector('.project-description');
+        if (projectDescriptionElement) projectDescriptionElement.textContent = currentProject.description;
+
+        // Update Features
+        const featuresList = document.querySelector('.feature-list');
+        if (featuresList) {
+            featuresList.innerHTML = ''; // Clear existing features
+            currentProject.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+        }
+
+        // Update Technologies
+        const techStackDiv = document.querySelector('.tech-stack');
+        if (techStackDiv) {
+            techStackDiv.innerHTML = ''; // Clear existing technologies
+            currentProject.technologies.forEach(tech => {
+                const span = document.createElement('span');
+                span.textContent = tech;
+                techStackDiv.appendChild(span);
+            });
+        }
+
+        // Update Challenges
+        const challengesDiv = document.querySelector('.challenges');
+        if (challengesDiv) {
+            challengesDiv.innerHTML = ''; // Clear existing challenges
+            currentProject.challenges.forEach(challenge => {
+                const challengeItem = document.createElement('div');
+                challengeItem.classList.add('challenge-item');
+                challengeItem.innerHTML = `<h3>${challenge.title}</h3><p>${challenge.description}</p>`;
+                challengesDiv.appendChild(challengeItem);
+            });
+        }
+
+        // Update Learning Outcomes
+        const learningOutcomesDiv = document.querySelector('.learning-outcomes');
+        if (learningOutcomesDiv) {
+            learningOutcomesDiv.innerHTML = ''; // Clear existing outcomes
+            currentProject.learningOutcomes.forEach(outcome => {
+                const outcomeItem = document.createElement('div');
+                outcomeItem.classList.add('learning-outcome-item');
+                outcomeItem.innerHTML = `<h3>${outcome.title}</h3><p>${outcome.description}</p>`;
+                learningOutcomesDiv.appendChild(outcomeItem);
+            });
+        }
+
+    } else {
+        // Redirect to projects section or show an error
+        console.error("Project data not found for ID:", project);
+        // Optional: Redirect to home or projects page
+        // window.location.href = 'index.html#projects';
     }
 });
