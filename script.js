@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const project = urlParams.get('project'); // This is the project ID from the URL
 
-    console.log("Project ID from URL:", project);
+    // console.log("Project ID from URL:", project);
 
     const projectData = {
         "optimai": {
@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    console.log("Project Data for ID:", projectData[project]);
+    // console.log("Project Data for ID:", projectData[project]);
 
     if (project && projectData[project]) {
         const currentProject = projectData[project];
